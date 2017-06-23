@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+
+        <h1>Delete {{category.name}}</h1>
+        <p>Are you sure you want to delete the category {{category.name}}?</p>
+
+        <form action="{{url_for('deleteCategory', category_name = category.name)}}" method = "post">
+            <div class="form-group">
+                <button type="submit" id="submit" class="btn btn-danger">Delete</button>
+                <a href="{{url_for('home', category_name = category.name)}}">
+                    <button type="button" class="btn btn-default">Cancel</button>
+                </a>
+            </div>
+        </form>
+    </div>
+</section>
+
+{% endblock %}
